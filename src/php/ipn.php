@@ -8,18 +8,23 @@ if (isset($_POST['custom'])) {
     $order_id = 0;
 }
 
+log_request("DEBUG","Processing order: $order_id");
+#log_request("PARMS",)
+
+
 //$this->load->model('checkout/order');
 
 //$order_info = $this->model_checkout_order->getOrder($order_id);
 
-if ($order_info) {
+if ($order_id) {
     $request = 'cmd=_notify-validate';
-
+    
+    
     foreach ($_POST as $key => $value) {
         $request .= '&' . $key . '=' . urlencode(stripslashes(html_entity_decode($value, ENT_QUOTES, 'UTF-8')));
     }
-
-    if (extension_loaded('curl')) {
+    log_request("RECEIVED",$request);
+    if (extension_loaded('curl') && false) {
 
         $ch = curl_init($ZESA_ACTION);
 
@@ -31,6 +36,9 @@ if ($order_info) {
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
         $response = curl_exec($ch);
+
+        log_request("IN",$response);
+
         if (strcmp($response, 'VERIFIED') == 0 || $_POST['payment_status'] == 'Completed') {
         //$this->model_checkout_order->confirm($order_id, $this->config->get('zx_standard_order_status_id'));
             //RECORD SUCCESSFUL
@@ -41,7 +49,8 @@ if ($order_info) {
 
         curl_close($ch);
     } else {
-        $header  = 'POST /cgi-bin/webscr HTTP/1.0' . "\r\n";
+        $header  = "POST $ZESA_PATH HTTP/1.1" . "\r\n"; #Host: opencart.zeevex.com
+        $header .= "Host: $ZESA_HOST:$ZESA_PORT" . "\r\n";
         $header .= 'Content-Type: application/x-www-form-urlencoded' . "\r\n";
         $header .= 'Content-Length: ' . strlen(utf8_decode($request)) . "\r\n";
         $header .= 'Connection: close'  ."\r\n\r\n";
@@ -49,20 +58,25 @@ if ($order_info) {
 
         if ($fp) {
             fputs($fp, $header . $request);
-
+            log_request("SEND",$header . $request);
+            $response = "";
             while (!feof($fp)) {
-                $response = fgets($fp, 1024);
-                if (strcmp($response, 'VERIFIED') == 0) {
-
+                $line = fgets($fp, 1024);
+                $response .= $line;
+                #log_request("RECEIVED",$response);
+                if (strcmp($line, 'VERIFIED') == 0) {
+                    log_request("OK","Sucessful transaction");
                 //RECORD SUCCESSFUL
-                //$this->model_checkout_order->confirm($order_id, $this->config->get('zx_standard_order_status_id'));
-                } else {
-                //RECORD FAIL
-                // $this->model_checkout_order->confirm($order_id, $this->config->get('config_order_status_id'));
-                }
+                } 
             }
+
+            log_request("RECEIVED",$response);
+            
             fclose($fp);
-        } //if ($fp) {
+        } else {
+            log_request("ERR","Can't connect to: $ZESA_HOST:$ZESA_PORT");
+            //if ($fp) {
+        }
     } // if (extension_loaded('curl')) {
 } //if ($order_info) {
 
