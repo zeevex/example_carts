@@ -2,7 +2,9 @@
 
 require("zesa_config.php");
 
-//log_request("TEST","Loading Cart");
+$RANDOM_ORDER = rand(7, 1776);
+
+log_request("DEBUG","Beging request with random order #$RANDOM_ORDER");
 
 
 ?>
@@ -50,7 +52,7 @@ require("zesa_config.php");
 
                 <label for="country">country</label> <input type="text" name="country" value="US" /> <br/>
 
-                <label for="custom">custom</label> <input type="text" name="custom" value="<?php echo rand(7, 1776); ?>" /> <br/>
+                <label for="custom">custom</label> <input type="text" name="custom" value="<?php echo $RANDOM_ORDER ?>" /> <br/>
 
             </fieldset>
 

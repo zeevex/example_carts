@@ -8,13 +8,8 @@ if (isset($_POST['custom'])) {
     $order_id = 0;
 }
 
-log_request("DEBUG","Processing order: $order_id");
-#log_request("PARMS",)
+log_request("DEBUG","Processing IPN order: $order_id");
 
-
-//$this->load->model('checkout/order');
-
-//$order_info = $this->model_checkout_order->getOrder($order_id);
 
 if ($order_id) {
     $request = 'cmd=_notify-validate';
@@ -40,11 +35,9 @@ if ($order_id) {
         log_request("IN",$response);
 
         if (strcmp($response, 'VERIFIED') == 0 || $_POST['payment_status'] == 'Completed') {
-        //$this->model_checkout_order->confirm($order_id, $this->config->get('zx_standard_order_status_id'));
             //RECORD SUCCESSFUL
         } else {
             //RECORD FAIL
-        // $this->model_checkout_order->confirm($order_id, $this->config->get('config_order_status_id'));
         }
 
         curl_close($ch);
@@ -63,7 +56,7 @@ if ($order_id) {
             while (!feof($fp)) {
                 $line = fgets($fp, 1024);
                 $response .= $line;
-                #log_request("RECEIVED",$response);
+          
                 if (strcmp($line, 'VERIFIED') == 0) {
                     log_request("OK","Sucessful transaction");
                 //RECORD SUCCESSFUL

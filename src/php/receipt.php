@@ -8,7 +8,7 @@ require("zesa_config.php");
         <title> ZEEVEX: Test Cart </title>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        
+        <meta http-equiv="refresh" content="10">
         <style type="text/css" media=screen>
             <!--
             p {font-family: georgia, serif; font-size: x-small;}
