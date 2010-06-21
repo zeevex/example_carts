@@ -1,20 +1,99 @@
 <?php
-/* 
+/*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
 
 require("zesa_config.php");
 
+$EXAMPLE_CANCEL_URL = "$EXAMPLE_HOST_URL/onsite_cart_cancel.php";
+$EXAMPLE_RECEIPT_URL = "$EXAMPLE_HOST_URL/onsite_cart_return.php";
 ?>
 <html>
     <head>
         <title>ZEEVEX Onsite Cart</title>
+        <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+        <script type="text/javascript" charset="utf-8">
+            google.load("jquery", "1.3");
+        </script>
+        <!--
 
         <script type="text/javascript" src="http://sandbox.zeevex.com/javascripts/jquery.js"></script>
+        -->
+
         <script type="text/javascript" src="http://sandbox.zeevex.com/javascripts/jquery/jquery.form.js"></script>
+        <script type="text/javascript" src="games/zeevex_racing.js"></script>
+        <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+
+        <script type="text/javascript">
+            <!--
+            var balance = 5;
+
+            function getMovie(movieName) {
+                if (navigator.appName.indexOf("Microsoft") != -1) {
+                    return window[movieName];
+                } else {
+                    return document[movieName];
+                }
+
+            }
+
+            function getBalance() {
+                // alert("it works");
+                return balance;
+            }
+
+            function playGame() {
+
+                return false;
+                
+            }
+
+            function paymentCanceled() {
+
+             //   alert('payment cancelled');
+                $.prettyPhoto.close();
+            }
+
+            function paymentComplete() {
+                balance = balance + 10;
+                zr = getMovie("zeevex_racing"); // document.getElementById('zeevex_racing');
+                zr.addTokens();
+                $.prettyPhoto.close();
+            }
+
+            function setBalance(n) {
+                balance = n;
+            }
+
+            function buyTokens(amount) {
+
+                var form = document.getElementById("purchaseform");
+
+                form.invoice.value +=1;
+
+                var query = jQuery('#purchaseform').formSerialize();
+                var zframe =  document.getElementById("zeevex_iframe");
+                zframe = document.getElementById('zeevex_iframe');
+                zframe.href  = '<?php echo $ZESA_ACTION ?>?' + query +'&xframe=1&width=570&height=350';
+                $("a:first").trigger('click');
+                //zframe.trigger('click');
+            }
+
+
+            // function addTokens(amount) {
+            //     balance = balance + amount;
+            // }
+
+
+            -->
+        </script>
+
+        <script src="javascript/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+        <link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
+
         <style>
-            body { padding: 20px; }
+            body { padding: 20px; background-color: #ff9900; }
             #payment a, #payment a:visited, #payment a:link, #payment a:active, #payment a:hover {
                 text-decoration: none;
                 color: inherit;
@@ -46,49 +125,91 @@ require("zesa_config.php");
         </style>
     </head>
     <body>
-        <h1>ZEEVEX Onsite Cart </h1>
+
+
+        <div align="center">
+            <h1>ZEEVEX Onsite Cart </h1>
+
+
+            <div id="game">
+                <script language="JavaScript" type="text/javascript">
+                    /*
+                    AC_FL_RunContent(
+                    'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0',
+                    'width', '640',
+                    'height', '500',
+                    'src', 'games/zeevex_racing',
+                    'quality', 'high',
+                    'pluginspage', 'http://www.adobe.com/go/getflashplayer',
+                    'align', 'middle',
+                    'play', 'true',
+                    'loop', 'true',
+                    'scale', 'showall',
+                    'wmode', 'window',
+                    'devicefont', 'false',
+                    'id', 'zeevex_racing',
+                    'bgcolor', '#ffffff',
+                    'name', 'zeevex_racing',
+                    'menu', 'true',
+                    'allowFullScreen', 'false',
+                    'allowScriptAccess','always',
+                    'movie', 'games/zeevex_racing',
+                    'salign', ''
+                ); //end AC code */
+                </script>
+                <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="640" height="500" id="zeevex_racing" align="middle">
+                    <param name="allowScriptAccess" value="always" />
+                    <param name="allowFullScreen" value="false" />
+                    <param name="wmode" value="opaque" />
+                    <param name="movie" value="games/zeevex_racing.swf" /><param name="quality" value="high" /><param name="bgcolor" value="#ffffff" />	<embed src="games/zeevex_racing.swf" quality="high" bgcolor="#ffffff" width="640" height="500" name="zeevex_racing" align="middle" wmode="opaque" allowScriptAccess="always" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" />
+                </object>
+                <noscript>
+
+                </noscript>
+            </div>
+
+
+            <form action="#" id="purchaseform" name="purchaseform" style="display: none;">
+                <input id="cmd" name="cmd" type="hidden" value="_xclick" />
+                <input id="currency_code" name="currency_code" type="hidden" value="ZXT" />
+                <input id="rm" name="rm" type="hidden" value="0" />
+                <input id="iframe" name="iframe" type="hidden" value="1" />
 
 
 
-        <form action="#" id="purchaseform" name="purchaseform" style="display: none;">
-            <input id="cmd" name="cmd" type="hidden" value="_xclick" />
-            <input id="iframe" name="iframe" type="hidden" value="1" />
-            <input id="business" name="business" type="hidden" value="<?php echo $EXAMPLE_BUSINESS ?>" />
-            <input id="invoice" name="invoice" type="hidden" value="<?php echo $EXAMPLE_INVOICE_NUMBER ?>" />
-            <input id="item_name" name="item_name" type="hidden" value="Leather Purse" />
-            <input id="item_number" name="item_number" type="hidden" value="itemsku23591" />
-            <input id="amount" name="amount" type="hidden" value="10" />
-            <input id="quantity" name="quantity" type="hidden" value="1" />
-            <input id="currency_code" name="currency_code" type="hidden" value="ZXT" />
-            <input id="rm" name="rm" type="hidden" value="0" />
+                <input id="business" name="business" type="hidden" value="<?php echo $EXAMPLE_BUSINESS ?>" />
+                <input id="invoice" name="invoice" type="hidden" value="<?php echo $EXAMPLE_INVOICE_NUMBER ?>" />
+                <input id="item_name" name="item_name" type="hidden" value="<?php echo $EXAMPLE_ITEM_NAME ?>" />
+                <input id="item_number" name="item_number" type="hidden" value="<?php echo $EXAMPLE_ITEM_SKU ?>" />
+                <input id="amount" name="amount" type="hidden" value="10" />
 
 
-            <input class="url" type="hidden" name="cancel_return" value="<?php echo $EXAMPLE_CANCEL_URL ?>" /> 
-            <input class="url" type="hidden" name="notify_url" value="<?php echo $EXAMPLE_IPN_URL ?>" />
-            <input class="url" type="hidden" name="return" value="<?php echo $EXAMPLE_RECEIPT_URL ?>" />
+                <input id="quantity" name="quantity" type="hidden" value="1" />
 
 
-        </form>
+                <input class="url" type="hidden" name="cancel_return" value="<?php echo $EXAMPLE_CANCEL_URL ?>" />
+                <input class="url" type="hidden" name="notify_url" value="<?php echo $EXAMPLE_IPN_URL ?>" />
+                <input class="url" type="hidden" name="return" value="<?php echo $EXAMPLE_RECEIPT_URL ?>" />
 
-        <div id="iframe_container" style="width: 550px; height: 380px; background:black;">
+
+            </form>
 
 
+            <br>
 
+
+            <a id="zeevex_iframe"  rel="prettyPhoto" style="display:none"></a>
+
+            <script type="text/javascript">
+                <!--
+                //   alert("zr="+ document.getElementsByName("zeevex_racing"));
+                -->
+            </script>
+            <script type="text/javascript" charset="utf-8">
+                $(document).ready(function(){
+                    $("a[rel^='prettyPhoto']").prettyPhoto();
+                });
+            </script>
         </div>
-
-        <script type="text/javascript">
-            <!--
-            // transform the form's inputs into a query string
-            var query = jQuery('#purchaseform').formSerialize();
-
-            // dynamically create the iframe
-            iframe = document.createElement('IFRAME');
-            iframe.id = 'zeevex_iframe';
-            iframe.src = '<?php echo $ZESA_ACTION ?>?' + query;
-            document.getElementById('iframe_container').appendChild(iframe);
-
-            -->
-        </script>
-
     </body>
 </html>

@@ -2,7 +2,7 @@
 
 require("zesa_config.php");
 
-$RANDOM_ORDER = rand(7, 1776);
+
 
 log_request("DEBUG","Beging request with random order #$RANDOM_ORDER");
 
@@ -10,7 +10,7 @@ log_request("DEBUG","Beging request with random order #$RANDOM_ORDER");
 ?>
 <html>
     <head>
-        <title> ZEEVEX: Test Cart </title>
+        <title> ZEEVEX: Test Cart</title>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <style type="text/css" media=screen>
@@ -64,7 +64,7 @@ log_request("DEBUG","Beging request with random order #$RANDOM_ORDER");
                 <label for="amount">amount</label> <input type="text" name="amount" value="17.76" /> <br/>
 
                 <label for="invoice">invoice</label> <input type="text" name="invoice" value="<?php echo time() ?>" /> <br/>
-                <label for="item_name">item_name</label> <input type="text" name="item_name" value="Liberty Ring" /> <br/>
+                <label for="item_name">item_name</label> <input type="text" name="item_name" value="Liberty Bell" /> <br/>
 
                 <label for="lc">lc</label> <input type="text" name="lc" value="en" /> <br/>
                 <label for="no_note">no_note</label> <input type="text" name="no_note" value="1" /> <br/>

@@ -4,7 +4,10 @@
  * The most you should update the following variables to reflect your
  * environment.
  */
-$ZESA_HOST="localhost";
+require('common.php');
+
+
+$ZESA_HOST="test.localhost.zeevex.com";
 $ZESA_PORT=4500;
 $ZESA_PATH="/cgi-bin/webscr";
 $ZESA_ACTION = "http://$ZESA_HOST:$ZESA_PORT$ZESA_PATH";
@@ -13,40 +16,18 @@ $EXAMPLE_HOST_URL = "http://phpcart.zeevex.com"; // change this to match your se
 $EXAMPLE_CANCEL_URL = "$EXAMPLE_HOST_URL/cart.php";
 $EXAMPLE_RECEIPT_URL = "$EXAMPLE_HOST_URL/receipt.php";
 $EXAMPLE_IPN_URL = "$EXAMPLE_HOST_URL/ipn.php";
+$EXAMPLE_INVOICE_NUMBER = time();
+
+$EXAMPLE_ITEM_NAME = "Ring of Power";
+$EXAMPLE_ITEM_SKU  = rand(2000,3000);
+
+
+$EXAMPLE_BUSINESS = "admin@zeevex.com";
 $IPN_LOG="ipn.log";
+$RANDOM_ORDER = rand(1, 1000);
 
-/*
- *  The
- *
- *
- */
+define('IPN_LOG',"ipn.log");
 
-function log_request($from, $message) {
-    global $IPN_LOG;
 
-    if($fp = fopen($IPN_LOG,"a")) {
-        $buffer = "<table width=100% border=1><tr><td valign='top' width=100>".htmlspecialchars($from)."</td><td>".htmlspecialchars($message)."</td></tr></table>\n";
-        fputs($fp,$buffer);
-        fclose($fp);
-    } 
-}
-
-function print_log() {
-    global $IPN_LOG;
-
-    if (is_readable($IPN_LOG)) {
-        $fp = fopen($IPN_LOG,"r");
-        $buffer = "";
-        while (!feof($fp)) {
-            $line = fgets($fp,1024);
-            $buffer .= $line."</br>";
-        }
-        
-        return  $buffer;
-    }
-
-    return "No log content found. Perhaps the directory where this PHP file is stored is not writable.";
-
-}
 
 ?>

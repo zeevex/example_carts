@@ -19,7 +19,7 @@ if ($order_id) {
         $request .= '&' . $key . '=' . urlencode(stripslashes(html_entity_decode($value, ENT_QUOTES, 'UTF-8')));
     }
     log_request("RECEIVED",$request);
-    if (extension_loaded('curl') && false) {
+    if (extension_loaded('curl') && false) {  ### disabled curl execution
 
         $ch = curl_init($ZESA_ACTION);
 
@@ -57,7 +57,7 @@ if ($order_id) {
                 $line = fgets($fp, 1024);
                 $response .= $line;
           
-                if (strcmp($line, 'VERIFIED') == 0) {
+                if (strcmp($line, 'VERIFIED') == 0 || $_POST['payment_status'] == 'Completed') {
                     log_request("OK","Sucessful transaction");
                 //RECORD SUCCESSFUL
                 } 
