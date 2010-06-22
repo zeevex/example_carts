@@ -51,7 +51,7 @@ $EXAMPLE_RECEIPT_URL = "$EXAMPLE_HOST_URL/onsite_cart_return.php";
 
             function paymentCanceled() {
 
-             //   alert('payment cancelled');
+                //   alert('payment cancelled');
                 $.prettyPhoto.close();
             }
 
@@ -93,7 +93,7 @@ $EXAMPLE_RECEIPT_URL = "$EXAMPLE_HOST_URL/onsite_cart_return.php";
         <link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
 
         <style>
-            body { padding: 20px; background-color: #ff9900; }
+            body { padding: 20px; background-color: #3d3d3d; }
             #payment a, #payment a:visited, #payment a:link, #payment a:active, #payment a:hover {
                 text-decoration: none;
                 color: inherit;
@@ -117,6 +117,7 @@ $EXAMPLE_RECEIPT_URL = "$EXAMPLE_HOST_URL/onsite_cart_return.php";
 
             #spinner span { position: absolute; top: 100px; left: 220px; }
 
+            h1 { color: #3d3d3d }
             #zeevex_iframe {
 
                 height: 380px;
@@ -124,92 +125,95 @@ $EXAMPLE_RECEIPT_URL = "$EXAMPLE_HOST_URL/onsite_cart_return.php";
             }
         </style>
     </head>
-    <body>
-
+    <body >
 
         <div align="center">
-            <h1>ZEEVEX Onsite Cart </h1>
+            <div align="center" style="-moz-border-radius: 14px 14px 14px 14px; background-color: white; width: 700px; height:600px;">
+                <h1>ZEEVEX Onsite Cart </h1>
 
 
-            <div id="game">
-                <script language="JavaScript" type="text/javascript">
-                    /*
-                    AC_FL_RunContent(
-                    'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0',
-                    'width', '640',
-                    'height', '500',
-                    'src', 'games/zeevex_racing',
-                    'quality', 'high',
-                    'pluginspage', 'http://www.adobe.com/go/getflashplayer',
-                    'align', 'middle',
-                    'play', 'true',
-                    'loop', 'true',
-                    'scale', 'showall',
-                    'wmode', 'window',
-                    'devicefont', 'false',
-                    'id', 'zeevex_racing',
-                    'bgcolor', '#ffffff',
-                    'name', 'zeevex_racing',
-                    'menu', 'true',
-                    'allowFullScreen', 'false',
-                    'allowScriptAccess','always',
-                    'movie', 'games/zeevex_racing',
-                    'salign', ''
-                ); //end AC code */
+                <div id="game">
+                    <script language="JavaScript" type="text/javascript">
+                        /*
+                        AC_FL_RunContent(
+                        'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0',
+                        'width', '640',
+                        'height', '500',
+                        'src', 'games/zeevex_racing',
+                        'quality', 'high',
+                        'pluginspage', 'http://www.adobe.com/go/getflashplayer',
+                        'align', 'middle',
+                        'play', 'true',
+                        'loop', 'true',
+                        'scale', 'showall',
+                        'wmode', 'window',
+                        'devicefont', 'false',
+                        'id', 'zeevex_racing',
+                        'bgcolor', '#ffffff',
+                        'name', 'zeevex_racing',
+                        'menu', 'true',
+                        'allowFullScreen', 'false',
+                        'allowScriptAccess','always',
+                        'movie', 'games/zeevex_racing',
+                        'salign', ''
+                    ); //end AC code */
+                    </script>
+                    <div  style="width:650px;height:500px; background-color: #d57e00; -moz-border-radius: 14px 14px 14px 14px;-webkit-border-radius: 14px;border-radius: 14px;padding:5px;">
+                    <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="640" height="500" id="zeevex_racing" align="middle">
+                        <param name="allowScriptAccess" value="always" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="wmode" value="opaque" />
+                        <param name="movie" value="games/zeevex_racing.swf" /><param name="quality" value="high" /><param name="bgcolor" value="#ffffff" />	<embed src="games/zeevex_racing.swf" quality="high" bgcolor="#ffffff" width="640" height="500" name="zeevex_racing" align="middle" wmode="opaque" allowScriptAccess="always" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" />
+                    </object>
+                    </div>
+                    <noscript>
+
+                    </noscript>
+                </div>
+
+
+                <form action="#" id="purchaseform" name="purchaseform" style="display: none;">
+                    <input id="cmd" name="cmd" type="hidden" value="_xclick" />
+                    <input id="currency_code" name="currency_code" type="hidden" value="ZXT" />
+                    <input id="rm" name="rm" type="hidden" value="0" />
+                    <input id="iframe" name="iframe" type="hidden" value="1" />
+
+
+
+                    <input id="business" name="business" type="hidden" value="<?php echo $EXAMPLE_BUSINESS ?>" />
+                    <input id="invoice" name="invoice" type="hidden" value="<?php echo $EXAMPLE_INVOICE_NUMBER ?>" />
+                    <input id="item_name" name="item_name" type="hidden" value="<?php echo $EXAMPLE_ITEM_NAME ?>" />
+                    <input id="item_number" name="item_number" type="hidden" value="<?php echo $EXAMPLE_ITEM_SKU ?>" />
+                    <input id="amount" name="amount" type="hidden" value="10" />
+
+
+                    <input id="quantity" name="quantity" type="hidden" value="1" />
+
+
+                    <input class="url" type="hidden" name="cancel_return" value="<?php echo $EXAMPLE_CANCEL_URL ?>" />
+                    <input class="url" type="hidden" name="notify_url" value="<?php echo $EXAMPLE_IPN_URL ?>" />
+                    <input class="url" type="hidden" name="return" value="<?php echo $EXAMPLE_RECEIPT_URL ?>" />
+
+
+                </form>
+
+
+                <br>
+
+
+                <a id="zeevex_iframe"  rel="prettyPhoto" style="display:none"></a>
+
+                <script type="text/javascript">
+                    <!--
+                    //   alert("zr="+ document.getElementsByName("zeevex_racing"));
+                    -->
                 </script>
-                <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="640" height="500" id="zeevex_racing" align="middle">
-                    <param name="allowScriptAccess" value="always" />
-                    <param name="allowFullScreen" value="false" />
-                    <param name="wmode" value="opaque" />
-                    <param name="movie" value="games/zeevex_racing.swf" /><param name="quality" value="high" /><param name="bgcolor" value="#ffffff" />	<embed src="games/zeevex_racing.swf" quality="high" bgcolor="#ffffff" width="640" height="500" name="zeevex_racing" align="middle" wmode="opaque" allowScriptAccess="always" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" />
-                </object>
-                <noscript>
-
-                </noscript>
+                <script type="text/javascript" charset="utf-8">
+                    $(document).ready(function(){
+                        $("a[rel^='prettyPhoto']").prettyPhoto();
+                    });
+                </script>
             </div>
-
-
-            <form action="#" id="purchaseform" name="purchaseform" style="display: none;">
-                <input id="cmd" name="cmd" type="hidden" value="_xclick" />
-                <input id="currency_code" name="currency_code" type="hidden" value="ZXT" />
-                <input id="rm" name="rm" type="hidden" value="0" />
-                <input id="iframe" name="iframe" type="hidden" value="1" />
-
-
-
-                <input id="business" name="business" type="hidden" value="<?php echo $EXAMPLE_BUSINESS ?>" />
-                <input id="invoice" name="invoice" type="hidden" value="<?php echo $EXAMPLE_INVOICE_NUMBER ?>" />
-                <input id="item_name" name="item_name" type="hidden" value="<?php echo $EXAMPLE_ITEM_NAME ?>" />
-                <input id="item_number" name="item_number" type="hidden" value="<?php echo $EXAMPLE_ITEM_SKU ?>" />
-                <input id="amount" name="amount" type="hidden" value="10" />
-
-
-                <input id="quantity" name="quantity" type="hidden" value="1" />
-
-
-                <input class="url" type="hidden" name="cancel_return" value="<?php echo $EXAMPLE_CANCEL_URL ?>" />
-                <input class="url" type="hidden" name="notify_url" value="<?php echo $EXAMPLE_IPN_URL ?>" />
-                <input class="url" type="hidden" name="return" value="<?php echo $EXAMPLE_RECEIPT_URL ?>" />
-
-
-            </form>
-
-
-            <br>
-
-
-            <a id="zeevex_iframe"  rel="prettyPhoto" style="display:none"></a>
-
-            <script type="text/javascript">
-                <!--
-                //   alert("zr="+ document.getElementsByName("zeevex_racing"));
-                -->
-            </script>
-            <script type="text/javascript" charset="utf-8">
-                $(document).ready(function(){
-                    $("a[rel^='prettyPhoto']").prettyPhoto();
-                });
-            </script>
         </div>
     </body>
 </html>
