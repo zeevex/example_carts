@@ -13,7 +13,7 @@
         </script>
     </head>
     <body>
-        <h1> Payment Canceled </h1>
+        <h1>  </h1>
 
     </body>
 </html>

@@ -16,6 +16,7 @@ $EXAMPLE_RECEIPT_URL = "$EXAMPLE_HOST_URL/onsite_cart_return.php";
         <script type="text/javascript" charset="utf-8">
             google.load("jquery", "1.3");
         </script>
+
         <!--
 
         <script type="text/javascript" src="http://sandbox.zeevex.com/javascripts/jquery.js"></script>
@@ -50,14 +51,12 @@ $EXAMPLE_RECEIPT_URL = "$EXAMPLE_HOST_URL/onsite_cart_return.php";
             }
 
             function paymentCanceled() {
-
-                //   alert('payment cancelled');
                 $.prettyPhoto.close();
             }
 
             function paymentComplete() {
                 balance = balance + 10;
-                zr = getMovie("zeevex_racing"); // document.getElementById('zeevex_racing');
+                zr = getMovie("zeevex_racing"); 
                 zr.addTokens();
                 $.prettyPhoto.close();
             }
@@ -77,13 +76,7 @@ $EXAMPLE_RECEIPT_URL = "$EXAMPLE_HOST_URL/onsite_cart_return.php";
                 zframe = document.getElementById('zeevex_iframe');
                 zframe.href  = '<?php echo $ZESA_ACTION ?>?' + query +'&xframe=1&width=570&height=350';
                 $("a:first").trigger('click');
-                //zframe.trigger('click');
             }
-
-
-            // function addTokens(amount) {
-            //     balance = balance + amount;
-            // }
 
 
             -->
@@ -118,11 +111,7 @@ $EXAMPLE_RECEIPT_URL = "$EXAMPLE_HOST_URL/onsite_cart_return.php";
             #spinner span { position: absolute; top: 100px; left: 220px; }
 
             h1 { color: #3d3d3d }
-            #zeevex_iframe {
-
-                height: 380px;
-                width: 550px;
-            }
+            #zeevex_iframe { height: 700px; width: 350px; display: none; }
         </style>
     </head>
     <body >
@@ -159,12 +148,12 @@ $EXAMPLE_RECEIPT_URL = "$EXAMPLE_HOST_URL/onsite_cart_return.php";
                     ); //end AC code */
                     </script>
                     <div  style="width:650px;height:500px; background-color: #d57e00; -moz-border-radius: 14px 14px 14px 14px;-webkit-border-radius: 14px;border-radius: 14px;padding:5px;">
-                    <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="640" height="500" id="zeevex_racing" align="middle">
-                        <param name="allowScriptAccess" value="always" />
-                        <param name="allowFullScreen" value="false" />
-                        <param name="wmode" value="opaque" />
-                        <param name="movie" value="games/zeevex_racing.swf" /><param name="quality" value="high" /><param name="bgcolor" value="#ffffff" />	<embed src="games/zeevex_racing.swf" quality="high" bgcolor="#ffffff" width="640" height="500" name="zeevex_racing" align="middle" wmode="opaque" allowScriptAccess="always" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" />
-                    </object>
+                        <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="640" height="500" id="zeevex_racing" align="middle">
+                            <param name="allowScriptAccess" value="always" />
+                            <param name="allowFullScreen" value="false" />
+                            <param name="wmode" value="opaque" />
+                            <param name="movie" value="games/zeevex_racing.swf" /><param name="quality" value="high" /><param name="bgcolor" value="#ffffff" />	<embed src="games/zeevex_racing.swf" quality="high" bgcolor="#ffffff" width="640" height="500" name="zeevex_racing" align="middle" wmode="opaque" allowScriptAccess="always" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" />
+                        </object>
                     </div>
                     <noscript>
 
@@ -177,42 +166,35 @@ $EXAMPLE_RECEIPT_URL = "$EXAMPLE_HOST_URL/onsite_cart_return.php";
                     <input id="currency_code" name="currency_code" type="hidden" value="ZXT" />
                     <input id="rm" name="rm" type="hidden" value="0" />
                     <input id="iframe" name="iframe" type="hidden" value="1" />
-
-
-
                     <input id="business" name="business" type="hidden" value="<?php echo $EXAMPLE_BUSINESS ?>" />
                     <input id="invoice" name="invoice" type="hidden" value="<?php echo $EXAMPLE_INVOICE_NUMBER ?>" />
                     <input id="item_name" name="item_name" type="hidden" value="<?php echo $EXAMPLE_ITEM_NAME ?>" />
                     <input id="item_number" name="item_number" type="hidden" value="<?php echo $EXAMPLE_ITEM_SKU ?>" />
                     <input id="amount" name="amount" type="hidden" value="10" />
-
-
                     <input id="quantity" name="quantity" type="hidden" value="1" />
-
-
                     <input class="url" type="hidden" name="cancel_return" value="<?php echo $EXAMPLE_CANCEL_URL ?>" />
                     <input class="url" type="hidden" name="notify_url" value="<?php echo $EXAMPLE_IPN_URL ?>" />
                     <input class="url" type="hidden" name="return" value="<?php echo $EXAMPLE_RECEIPT_URL ?>" />
-
-
                 </form>
 
 
                 <br>
 
 
-                <a id="zeevex_iframe"  rel="prettyPhoto" style="display:none"></a>
+                <a id="zeevex_iframe"  rel="prettyPhoto"  >
+                    
+                    
+                </a>
 
-                <script type="text/javascript">
-                    <!--
-                    //   alert("zr="+ document.getElementsByName("zeevex_racing"));
-                    -->
-                </script>
+
                 <script type="text/javascript" charset="utf-8">
                     $(document).ready(function(){
                         $("a[rel^='prettyPhoto']").prettyPhoto();
                     });
                 </script>
+
+
+
             </div>
         </div>
     </body>
