@@ -4,9 +4,13 @@
     Author     : ghost
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+<%@include  file="common.jsp" %>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
+
 
 <html>
     <head>
@@ -14,6 +18,11 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Hello World!
+
+            <%= properties %>
+            <%= ZESA_ACTION %>
+
+        </h1>
     </body>
 </html>
