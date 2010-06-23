@@ -47,7 +47,7 @@
 
 
             <br/>
-            <a href="cart.php">Place another order</a>
+            <a href="cart.jsp">Place another order</a>
         </form>
     </body>
 </html>

@@ -73,6 +73,8 @@
 
 
                 <label for="cancel_return">cancel_return</label> <input class="url" type="text" name="cancel_return" value="<%= EXAMPLE_CANCEL_URL%>" /> <br/>
+                 <label for="notify_url">notify_url</label> <input class="url"type="text" name="notify_url" value="<%= EXAMPLE_IPN_URL %>" /> <br/>
+
                 <label for="return">return</label> <input class="url"type="text" name="return" value="<%= EXAMPLE_RECEIPT_URL%>" /> <br/>
 
 
