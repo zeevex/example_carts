@@ -1,0 +1,4 @@
+zesa_host_url: http://sandbox.zeevex.com:80/cgi-bin/webscr
+cancel_url: http://localhost:5000/cancel_callback
+receipt_url: http://localhost:5000/receipt_callback
+ipn_url: http://localhost:5000/ipn_callback

@@ -1,0 +1,15 @@
+# Logfile created on Thu Jun 24 16:46:35 -0400 2010
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-24 16:46:53) [GET]
+Rendering application/index
+Completed in 12ms (View: 10 | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#ipn_callback (for 127.0.0.1 at 2010-06-24 16:47:18) [GET]
+Rendering application/ipn_callback
+Completed in 8ms (View: 7 | 200 OK [http://localhost/ipn_callback]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-24 16:47:27) [POST]
+Rendering application/index
+Completed in 12ms (View: 9 | 200 OK [http://localhost/]
