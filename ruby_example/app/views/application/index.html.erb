@@ -1,0 +1,51 @@
+
+<% form_remote_tag :url=> @zesa_url, :html=>{:id =>'main_form'}  do %>
+  
+      <% field_set_tag 'Read-Only', :id=>'read_only' do %>
+           <%= label_tag 'rm' %>
+           <%= text_field_tag 'rm', '0' , :id => 'rm', :readonly => 'readonly' %> 
+           <%= label_tag 'cmd' %>
+           <%= text_field_tag 'cmd', '_xclick', :id => 'cmd',  :readonly => 'readonly'  %> 
+           <%= label_tag 'currency_code' %>
+           <%= text_field_tag 'currency_code', 'USD' , :id => 'currency_code',  :readonly => 'readonly'  %> 
+           <%= label_tag 'payment_option' %>
+           <%= text_field_tag 'payment_option', 'sale' , :id => 'payment_option', :readonly => 'readonly'  %> 
+      <% end %>
+      
+      <% field_set_tag 'Personal Info', :id=>'personal_info' do %>
+           <%= label_tag 'custom' %>
+           <%= text_field_tag 'custom', 'customer_id_goes_here' %> 
+      <% end %>
+
+      <% field_set_tag 'API Info', :id=>'api_info' do %>
+           <%= label_tag 'business' %>
+           <%= text_field_tag 'business', 'admin@zeevex.com' %> 
+           <br/>
+           <%= label_tag 'amount' %>
+           <%= text_field_tag 'amount', '17.76' %> 
+           <br/>
+           <%= label_tag 'invoice' %>
+           <%= text_field_tag 'invoice', '1277324773' %> 
+           <br/>
+           <%= label_tag 'item_name' %>
+           <%= text_field_tag 'item_name', 'Liberty Bell' %> 
+           <br/>
+           <%= label_tag 'lc' %>
+           <%= text_field_tag 'lc', 'en' %> 
+           <br/>
+           <%= label_tag 'no_note' %>
+           <%= text_field_tag 'no_note', '1' %> 
+           <br/>
+           <%= label_tag 'cancel_return' %>
+           <%= text_field_tag 'cancel_return', @cancel_url %> 
+           <br/>
+           <%= label_tag 'notify_url' %>
+           <%= text_field_tag 'notify_url', @ipn_url %> 
+           <br/>
+           <%= label_tag 'return' %>
+           <%= text_field_tag 'return', @reciept_url %> 
+      <% end %>
+
+      <%= submit_tag 'Purchase' %>
+
+<% end %>
