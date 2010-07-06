@@ -5,13 +5,13 @@ Dim Item_name, Item_number, Payment_status, Payment_amount
 Dim Txn_id, Receiver_email, Payer_email
 Dim objHttp, str
 
-' read post from PayPal system and add 'cmd'
+' read post from Zeevex system and add 'cmd'
 str = Request.Form & "&cmd=_notify-validate"
 
 
 call Log_Message("IN", str)
 
-' post back to PayPal system to validate
+
 set objHttp = Server.CreateObject("Msxml2.ServerXMLHTTP")
 ' set objHttp = Server.CreateObject("Msxml2.ServerXMLHTTP.4.0")
 ' set objHttp = Server.CreateObject("Microsoft.XMLHTTP")
