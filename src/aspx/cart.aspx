@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <script runat="server">
-   
+    
 
     Dim config As NameValueCollection = ConfigurationSettings.GetConfig("zesaConfig")
     Dim ZESA_ACTION As String = config("ZESA_ACTION")
@@ -11,14 +11,14 @@
     Dim EXAMPLE_CANCEL_URL As String = config("EXAMPLE_CANCEL_URL")
     Dim EXAMPLE_RECEIPT_URL As String = config("EXAMPLE_RECEIPT_URL")
     Dim EXAMPLE_IPN_URL As String = config("EXAMPLE_IPN_URL")
-    Dim EXAMPLE_RANDOM_INVOICE_NUMBER As Integer = 1 'Random.Next(1000)
-    Dim EXAMPLE_RANDOM_ORDER As Integer = Time() 'Random.Next(10000)
+    Dim EXAMPLE_RANDOM_INVOICE_NUMBER As Integer = RandomNumber(1000, 10000) 'Random.Next(1000)
+    Dim EXAMPLE_RANDOM_ORDER As Integer = RandomNumber(10000, 20000) 'Random.Next(10000)
     
     Function RandomNumber(ByVal intHighestNumber, ByVal intLowestNumber)
         Randomize()
         RandomNumber = Int(Rnd * intHighestNumber) + intLowestNumber
     End Function
-</script> 
+</script>  
 
 <html>
     <head>
