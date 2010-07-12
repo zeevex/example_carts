@@ -18,6 +18,9 @@
         Randomize()
         RandomNumber = Int(Rnd * intHighestNumber) + intLowestNumber
     End Function
+    
+    
+    
 </script>  
 
 <html>
