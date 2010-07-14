@@ -3,8 +3,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <script runat="server">
-    
-
     Dim config As NameValueCollection = ConfigurationSettings.GetConfig("zesaConfig")
     Dim ZESA_ACTION As String = config("ZESA_ACTION")
     Dim EXAMPLE_BUSINESS As String = config("EXAMPLE_BUSINESS")
@@ -18,17 +16,12 @@
         Randomize()
         RandomNumber = Int(Rnd * intHighestNumber) + intLowestNumber
     End Function
-    
-    
-    
 </script>  
 
 <html>
     <head>
         <title> ZEEVEX: Test Cart</title>
-
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
     </head>
     <body>
     
