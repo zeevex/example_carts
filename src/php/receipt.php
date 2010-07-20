@@ -16,6 +16,9 @@ require("zesa_config.php");
             a:hover {color: #ff0000; text-decoration: none}
 
             .url {width:400px}
+
+            
+
             -->
         </style>
     </head>

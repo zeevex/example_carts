@@ -7,7 +7,7 @@
 require("zesa_config.php");
 
 $EXAMPLE_CANCEL_URL = "$EXAMPLE_HOST_URL/onsite_cart_cancel.php";
-$EXAMPLE_RECEIPT_URL = "$EXAMPLE_HOST_URL/onsite_cart_return.php";
+$EXAMPLE_RECEIPT_URL= "$EXAMPLE_HOST_URL/onsite_cart_return.php";
 ?>
 <html>
     <head>

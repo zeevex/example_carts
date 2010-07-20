@@ -72,10 +72,10 @@
                 <label for="no_note">no_note</label> <input type="text" name="no_note" value="1" /> <br/>
 
 
-                <label for="cancel_return">cancel_return</label> <input class="url" type="text" name="cancel_return" value="<%= EXAMPLE_CANCEL_URL%>" /> <br/>
-                 <label for="notify_url">notify_url</label> <input class="url"type="text" name="notify_url" value="<%= EXAMPLE_IPN_URL %>" /> <br/>
+                <label for="cancel_return">cancel_return</label> <input class="url" type="text" name="cancel_return" value="<%= EXAMPLE_CANCEL_RETURN_URL %>" /> <br/>
+                 <label for="notify_url">notify_url</label> <input class="url"type="text" name="notify_url" value="<%= EXAMPLE_NOTIFY_URL %>" /> <br/>
 
-                <label for="return">return</label> <input class="url"type="text" name="return" value="<%= EXAMPLE_RECEIPT_URL%>" /> <br/>
+                <label for="return">return</label> <input class="url"type="text" name="return" value="<%= EXAMPLE_RETURN_URL%>" /> <br/>
 
 
             </fieldset>
