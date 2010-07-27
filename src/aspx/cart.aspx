@@ -40,10 +40,10 @@
                     <legend>Personal Info</legend>
                     <label for="first_name">first_name</label> <input type="text" name="first_name" value="John" /> <br/>
                     <label for="last_name">last_name</label> <input type="text" name="last_name" value="Doe" /> <br/>
-                    <label for="address1">address1</label> <input type="text" name="address1" value="2451 Cumberland pkwy suite 3235" /> <br/>
-                    <label for="address2">address2</label> <input type="text" name="address2" value="" /> <br/>
+                    <label for="street_address">address</label> <input type="text" name="street_address" value="250 Williams St. Suite M-100" /> <br/>
+      
                     <label for="city">city</label> <input type="text" name="city" value="Atlanta" /> <br/>
-                    <label for="zip">zip</label> <input type="text" name="zip" value="" /> <br/>
+                    <label for="zip">zip</label> <input type="text" name="zip" value="30303" /> <br/>
 
                     <label for="country">country</label> <input type="text" name="country" value="US" /> <br/>
 

@@ -75,7 +75,7 @@ log_request("DEBUG", "Beging request with random order #$RANDOM_ORDER");
             <div  class="border" >
             <fieldset >
                 <legend>API Info</legend>
-                <label for="business">business</label> <input type="text" name="business" value="admin@zeevex.com" /> <br/>
+                <label for="business">business</label> <input type="text" name="business" value="<?php echo $EXAMPLE_BUSINESS ?>" /> <br/>
 
                 <label for="amount">amount</label> <input type="text" name="amount" value="17.76" /> <br/>
 

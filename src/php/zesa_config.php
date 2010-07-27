@@ -1,7 +1,7 @@
 <?php
 /* 
  * This file is use to configure the example cart for your website domain. At
- * The most you should update the following variables to reflect your
+ * the minimum you should update the following variables to reflect your
  * environment.
  */
 require('common.php');
