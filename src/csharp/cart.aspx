@@ -6,9 +6,9 @@
 
     String ZESA_ACTION;
     String EXAMPLE_BUSINESS;
-    String EXAMPLE_CANCEL_URL;
-    String EXAMPLE_RECEIPT_URL;
-    String EXAMPLE_IPN_URL ;
+    String EXAMPLE_CANCEL_RETURN_URL;
+    String EXAMPLE_RETURN_URL;
+    String EXAMPLE_NOTIFY_URL ;
     int EXAMPLE_RANDOM_INVOICE_NUMBER ;
     int EXAMPLE_RANDOM_ORDER ;
     
@@ -21,9 +21,9 @@
 
         ZESA_ACTION = config.Get("ZESA_ACTION");
         EXAMPLE_BUSINESS = config.Get("EXAMPLE_BUSINESS");
-        EXAMPLE_CANCEL_URL = config.Get("EXAMPLE_CANCEL_URL");
-        EXAMPLE_RECEIPT_URL = config.Get("EXAMPLE_RECEIPT_URL");
-        EXAMPLE_IPN_URL = config.Get("EXAMPLE_IPN_URL");
+        EXAMPLE_CANCEL_RETURN_URL = config.Get("EXAMPLE_CANCEL_RETURN_URL");
+        EXAMPLE_RETURN_URL = config.Get("EXAMPLE_RETURN_URL");
+        EXAMPLE_NOTIFY_URL = config.Get("EXAMPLE_NOTIFY_URL");
         EXAMPLE_RANDOM_INVOICE_NUMBER = RandomNumber(1000, 10000);
         EXAMPLE_RANDOM_ORDER = RandomNumber(10000, 20000);
     }
@@ -78,9 +78,9 @@
                 <label for="no_note">no_note</label> <input type="text" name="no_note" value="1" /> <br/>
 
 
-                <label for="cancel_return">cancel_return</label> <input class="url" type="text" name="cancel_return" value="<%= EXAMPLE_CANCEL_URL %>" size="50" /> <br/>
-                <label for="notify_url">notify_url</label> <input class="url"type="text" name="notify_url" value="<%= EXAMPLE_IPN_URL %>" /> <br/>
-                <label for="return">return</label> <input class="url"type="text" name="return" value="<%= EXAMPLE_RECEIPT_URL %>" /> <br/>
+                <label for="cancel_return">cancel_return</label> <input class="url" type="text" name="cancel_return" value="<%= EXAMPLE_CANCEL_RETURN_URL %>" size="50" /> <br/>
+                <label for="notify_url">notify_url</label> <input class="url"type="text" name="notify_url" value="<%= EXAMPLE_NOTIFY_URL %>" /> <br/>
+                <label for="return">return</label> <input class="url"type="text" name="return" value="<%= EXAMPLE_RETURN_URL %>" /> <br/>
 
 
             </fieldset>

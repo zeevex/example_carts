@@ -86,9 +86,9 @@ log_request("DEBUG", "Beging request with random order #$RANDOM_ORDER");
                 <label for="no_note">no_note</label> <input type="text" name="no_note" value="1" /> <br/>
 
 
-                <label for="cancel_return">cancel_return</label> <input class="url" type="text" name="cancel_return" value="<?php echo $EXAMPLE_CANCEL_URL ?>" size="50" /> <br/>
-                <label for="notify_url">notify_url</label> <input class="url"type="text" name="notify_url" value="<?php echo $EXAMPLE_IPN_URL ?>" /> <br/>
-                <label for="return">return</label> <input class="url"type="text" name="return" value="<?php echo $EXAMPLE_RECEIPT_URL ?>" /> <br/>
+                <label for="cancel_return">cancel_return</label> <input class="url" type="text" name="cancel_return" value="<?php echo $EXAMPLE_CANCEL_RETURN_URL ?>" size="50" /> <br/>
+                <label for="notify_url">notify_url</label> <input class="url"type="text" name="notify_url" value="<?php echo $EXAMPLE_NOTIFY_URL ?>" /> <br/>
+                <label for="return">return</label> <input class="url"type="text" name="return" value="<?php echo $EXAMPLE_RETURN_URL ?>" /> <br/>
 
 
             </fieldset>

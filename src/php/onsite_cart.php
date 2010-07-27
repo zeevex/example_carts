@@ -6,8 +6,8 @@
 
 require("zesa_config.php");
 
-$EXAMPLE_CANCEL_URL = "$EXAMPLE_HOST_URL/onsite_cart_cancel.php";
-$EXAMPLE_RECEIPT_URL= "$EXAMPLE_HOST_URL/onsite_cart_return.php";
+$EXAMPLE_CANCEL_RETURN_URL = "$EXAMPLE_HOST_URL/onsite_cart_cancel.php";
+$EXAMPLE_RETURN_URL= "$EXAMPLE_HOST_URL/onsite_cart_return.php";
 ?>
 <html>
     <head>
@@ -172,9 +172,9 @@ $EXAMPLE_RECEIPT_URL= "$EXAMPLE_HOST_URL/onsite_cart_return.php";
                     <input id="item_number" name="item_number" type="hidden" value="<?php echo $EXAMPLE_ITEM_SKU ?>" />
                     <input id="amount" name="amount" type="hidden" value="10" />
                     <input id="quantity" name="quantity" type="hidden" value="1" />
-                    <input class="url" type="hidden" name="cancel_return" value="<?php echo $EXAMPLE_CANCEL_URL ?>" />
-                    <input class="url" type="hidden" name="notify_url" value="<?php echo $EXAMPLE_IPN_URL ?>" />
-                    <input class="url" type="hidden" name="return" value="<?php echo $EXAMPLE_RECEIPT_URL ?>" />
+                    <input class="url" type="hidden" name="cancel_return" value="<?php echo $EXAMPLE_CANCEL_RETURN_URL ?>" />
+                    <input class="url" type="hidden" name="notify_url" value="<?php echo $EXAMPLE_NOTIFY_URL ?>" />
+                    <input class="url" type="hidden" name="return" value="<?php echo $EXAMPLE_RETURN_URL ?>" />
                 </form>
 
 
