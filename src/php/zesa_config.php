@@ -13,8 +13,8 @@ $ZESA_PATH="/cgi-bin/webscr";
 $ZESA_ACTION = "http://$ZESA_HOST:$ZESA_PORT$ZESA_PATH";
 
 $EXAMPLE_HOST_URL = "http://php.examplecart.zbox.zeevex.com"; // change this to match your server
-$EXAMPLE_CANCEL_RETURN_URL = "$EXAMPLE_HOST_URL/cart.php";
-$EXAMPLE_RETURN_URL = "$EXAMPLE_HOST_URL/receipt.php";
+$EXAMPLE_CANCEL_RETURN_URL = "$EXAMPLE_HOST_URL/index.php";
+$EXAMPLE_RETURN_URL = "$EXAMPLE_HOST_URL/return.php";
 $EXAMPLE_NOTIFY_URL = "$EXAMPLE_HOST_URL/ipn.php";
 $EXAMPLE_INVOICE_NUMBER = time();
 

@@ -8,8 +8,9 @@ function log_request($from, $message) {
     global $IPN_LOG;
 
     if($fp = fopen($IPN_LOG,"a")) {
-        $buffer = "<table width=100% border=1><tr><td valign='top' width=100>".htmlspecialchars($from)."</td><td>".htmlspecialchars($message)."</td></tr></table>\n";
-        fputs($fp,$buffer);
+       // $buffer = "<table width=100% border=1><tr><td valign='top' width=100>".htmlspecialchars($from)."</td><td>".htmlspecialchars($message)."</td></tr></table>\n";
+        $buffer = "<div class='log_row'><div class='log_type'>".htmlspecialchars($from)."</div><div class='log_message'>".htmlspecialchars($message)."</div></div>\n";
+		fputs($fp,$buffer);
         fclose($fp);
     }
 }

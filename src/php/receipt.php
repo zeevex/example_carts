@@ -42,7 +42,7 @@ require("zesa_config.php");
 
 
             <br/>
-            <a href="cart.php">Place another order</a>
+            
         </form>
     </body>
 </html>
