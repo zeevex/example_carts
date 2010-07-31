@@ -27,9 +27,8 @@
             sw.BaseStream.Seek(0, SeekOrigin.Begin)
         End If
 
-        sw.Write("<table><tr><td>" & type & "</td><td>" & message & "</td></tr></table>")
+        sw.Write("<div class='log_row'><div class='log_type'>" & type & "</div><div class='log_message'>" & message & "</div></div>")
         
-      
         sw.Close()
     End Function
     
