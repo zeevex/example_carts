@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>ZEEVEX | PHP Example Onsite Cart</title>
+<title>ZEEVEX | JSP Example Onsite Cart</title>
 <meta http-equiv="Content-type" content="text/html; charset=iso-8859-1" />
 <meta http-equiv="Content-Language" content="en-us" />
 <link href="css/global.css" rel="stylesheet" type="text/css" />
@@ -168,9 +168,9 @@ h1 {
         <input id="item_number" name="item_number" type="hidden" value="sku_1775" />
         <input id="amount" name="amount" type="hidden" value="10" />
         <input id="quantity" name="quantity" type="hidden" value="1" />
-        <input class="url" type="hidden" name="cancel_return" value="<%= EXAMPLE_CANCEL_RETURN_URL %>" />
+        <input class="url" type="hidden" name="cancel_return" value="<%=  EXAMPLE_HOST_URL+"/onsite_cart_cancel.jsp" %>" />
         <input class="url" type="hidden" name="notify_url" value="<%= EXAMPLE_NOTIFY_URL %>" />
-        <input class="url" type="hidden" name="return" value="<%= EXAMPLE_RETURN_URL %>" />
+        <input class="url" type="hidden" name="return" value="<%= EXAMPLE_HOST_URL+"/onsite_cart_return.jsp" %>" />
       </form>
       <br>
       

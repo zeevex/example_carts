@@ -10,9 +10,9 @@
             String ZESA_PATH = properties.getProperty("ZESA_PATH", "/cgi-bin/webscr" ) ;
             String ZESA_ACTION = properties.getProperty("ZESA_ACTION", "http://" + ZESA_HOST + ":" + ZESA_PORT + ZESA_PATH ) ;
 
-            String EXAMPLE_HOST_URL = properties.getProperty("EXAMPLE_HOST_URL", "http://phpcart.zeevex.com" ) ; // change this to match your server
-            String EXAMPLE_CANCEL_RETURN_URL = properties.getProperty("EXAMPLE_CANCEL_RETURN_URL", EXAMPLE_HOST_URL+"/cart.jsp" ) ;
-            String EXAMPLE_RETURN_URL = properties.getProperty("EXAMPLE_RETURN_URL", EXAMPLE_HOST_URL+"/receipt.jsp" ) ;
+            String EXAMPLE_HOST_URL = properties.getProperty("EXAMPLE_HOST_URL", "http://jsp.examplecart.zbox.zeevex.com" ) ; // change this to match your server
+            String EXAMPLE_CANCEL_RETURN_URL = properties.getProperty("EXAMPLE_CANCEL_RETURN_URL", EXAMPLE_HOST_URL+"/index.jsp" ) ;
+            String EXAMPLE_RETURN_URL = properties.getProperty("EXAMPLE_RETURN_URL", EXAMPLE_HOST_URL+"/return.jsp" ) ;
             String EXAMPLE_NOTIFY_URL = properties.getProperty("EXAMPLE_NOTIFY_URL", EXAMPLE_HOST_URL+"/ipn.jsp" ) ;
             String EXAMPLE_INVOICE_NUMBER = properties.getProperty("EXAMPLE_INVOICE_NUMBER", new Date().getTime() + "" ) ;
 

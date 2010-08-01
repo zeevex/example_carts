@@ -1,23 +1,36 @@
-<%@ Page Language="VB" %>
-
+<%@ Page Language="C#" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <script runat="server">
-    Dim config As NameValueCollection = ConfigurationSettings.GetConfig("zesaConfig")
-    Dim ZESA_ACTION As String = config("ZESA_ACTION")
-    Dim EXAMPLE_BUSINESS As String = config("EXAMPLE_BUSINESS")
-    Dim EXAMPLE_CANCEL_RETURN_URL As String = config("EXAMPLE_CANCEL_RETURN_URL")
-    Dim EXAMPLE_RETURN_URL As String = config("EXAMPLE_RETURN_URL")
-    Dim EXAMPLE_NOTIFY_URL As String = config("EXAMPLE_NOTIFY_URL")
-	Dim EXAMPLE_HOST_URL As String = config("EXAMPLE_HOST_URL")
-    Dim EXAMPLE_RANDOM_INVOICE_NUMBER As Integer = RandomNumber(1000, 10000) 'Random.Next(1000)
-    Dim EXAMPLE_RANDOM_ORDER As Integer = RandomNumber(10000, 20000) 'Random.Next(10000)
+    NameValueCollection config = (NameValueCollection)ConfigurationSettings.GetConfig("zesaConfig");
+
+    String ZESA_ACTION;
+    String EXAMPLE_BUSINESS;
+    String EXAMPLE_CANCEL_RETURN_URL;
+    String EXAMPLE_RETURN_URL;
+    String EXAMPLE_NOTIFY_URL ;
+	String EXAMPLE_HOST_URL ;
+    int EXAMPLE_RANDOM_INVOICE_NUMBER ;
+    int EXAMPLE_RANDOM_ORDER ;
     
-    Function RandomNumber(ByVal intHighestNumber, ByVal intLowestNumber)
-        Randomize()
-        RandomNumber = Int(Rnd * intHighestNumber) + intLowestNumber
-    End Function
-</script>
+
+    private int RandomNumber(int min, int max) {
+        Random random = new Random();
+        return random.Next(min, max);
+    } 
+    void Page_Load() {
+	
+        ZESA_ACTION = config.Get("ZESA_ACTION");
+        EXAMPLE_BUSINESS = config.Get("EXAMPLE_BUSINESS");
+        EXAMPLE_CANCEL_RETURN_URL = config.Get("EXAMPLE_CANCEL_RETURN_URL");
+        EXAMPLE_RETURN_URL = config.Get("EXAMPLE_RETURN_URL");
+        EXAMPLE_NOTIFY_URL = config.Get("EXAMPLE_NOTIFY_URL");
+		EXAMPLE_HOST_URL = config.Get("EXAMPLE_HOST_URL");
+        EXAMPLE_RANDOM_INVOICE_NUMBER = RandomNumber(1000, 10000);
+        EXAMPLE_RANDOM_ORDER = RandomNumber(10000, 20000);
+    }
+    
+</script>  
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -184,9 +197,9 @@ h1 {
         <input id="item_number" name="item_number" type="hidden" value="sku_1775" />
         <input id="amount" name="amount" type="hidden" value="10" />
         <input id="quantity" name="quantity" type="hidden" value="1" />
-        <input class="url" type="hidden" name="cancel_return" value="<%=  EXAMPLE_HOST_URL & "/onsite_cart_cancel.aspx" %>" />
+        <input class="url" type="hidden" name="cancel_return" value="<%= EXAMPLE_HOST_URL + "/onsite_cart_cancel.aspx" %>" />
         <input class="url" type="hidden" name="notify_url" value="<%= EXAMPLE_NOTIFY_URL %>" />
-        <input class="url" type="hidden" name="return" value="<%= EXAMPLE_HOST_URL & "/onsite_cart_return.aspx" %>" />
+        <input class="url" type="hidden" name="return" value="<%=  EXAMPLE_HOST_URL + "/onsite_cart_return.aspx"  %>" />
       </form>
       <br>
       
