@@ -66,15 +66,13 @@
                         zesa_response.append('\r');
                     }
                     rd.close();
-                    //System.out.println("zesa_reponse:"+zesa_response.toString());
-                    //return response.toString();
-
+                   
                     log_message("IN", zesa_response.toString());
 
                 } catch (Exception e) {
 
                     e.printStackTrace();
-                    //return null;
+                    log_message("ERR", e.getMessage());
 
                 } finally {
 
