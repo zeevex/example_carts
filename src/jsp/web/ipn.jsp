@@ -12,7 +12,7 @@
             boolean isVerfied = false;
 
 
-//log_request("DEBUG","Processing IPN order: $order_id");
+            log_message("DEBUG", "Processing IPN order: " + order_id);
 
 
             if (order_id != null) {
@@ -25,10 +25,10 @@
                     String name = (String) enumNames.nextElement();
                     params.append('&').append(name).append("=").append(URLEncoder.encode(request.getParameter(name), "UTF-8"));
                 }
-                //System.out.println(params.toString());
-                //   log_request("RECEIVED",$request);
-                //  String targetURL = ZESA_ACTION;
-                ;
+
+
+                log_message("IN",params.toString());
+
                 HttpURLConnection connection = null;
                 try {
                     //Create connection
@@ -49,6 +49,7 @@
                     wr.writeBytes(params.toString());
                     wr.flush();
                     wr.close();
+                    log_message("OUT", params.toString());
 
                     //Get Response
                     InputStream is = connection.getInputStream();
@@ -67,6 +68,8 @@
                     rd.close();
                     //System.out.println("zesa_reponse:"+zesa_response.toString());
                     //return response.toString();
+
+                    log_message("IN", zesa_response.toString());
 
                 } catch (Exception e) {
 

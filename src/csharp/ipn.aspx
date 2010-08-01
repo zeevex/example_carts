@@ -11,7 +11,9 @@
      //   if (File.Exists(filePath))
       //  {
             StreamWriter sw = File.AppendText(filePath);
-            sw.WriteLine("<table><tr><td>" + type + "</td><td>" + message + "</td></tr></table>");
+            sw.WriteLine("<div class='log_row'><div class='log_type'>" + type + "</div><div class='log_message'>" + message + "</div></div>");
+
+
             sw.Close();
         
 
