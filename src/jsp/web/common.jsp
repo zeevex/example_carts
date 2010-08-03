@@ -2,8 +2,9 @@
 <%
             Properties properties = new Properties();
 
-            properties.load(this.getServletContext().getResourceAsStream("Zeevex.properties"));
-
+        //    properties.load(this.getServletContext().getResourceAsStream("Zeevex.properties"));
+            properties.load( new BufferedReader( new FileReader( new File(this.getServletContext().getRealPath("Zeevex.properties")) )));
+           
 
             String ZESA_HOST = properties.getProperty("ZESA_HOST", "test.localhost.zeevex.com");
             String ZESA_PORT = properties.getProperty("ZESA_PORT", "4500");
