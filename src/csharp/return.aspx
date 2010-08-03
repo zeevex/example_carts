@@ -42,6 +42,7 @@
 <title>ZEEVEX | ASPX Example Cart</title>
 <meta http-equiv="Content-type" content="text/html; charset=iso-8859-1" />
 <meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="refresh" content="10">
 <link href="css/global.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
