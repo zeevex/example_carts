@@ -6,8 +6,8 @@
             properties.load( new BufferedReader( new FileReader( new File(this.getServletContext().getRealPath("Zeevex.properties")) )));
            
 
-            String ZESA_HOST = properties.getProperty("ZESA_HOST", "test.localhost.zeevex.com");
-            String ZESA_PORT = properties.getProperty("ZESA_PORT", "4500");
+            String ZESA_HOST = properties.getProperty("ZESA_HOST", "sandbox.zeevex.com");
+            String ZESA_PORT = properties.getProperty("ZESA_PORT", "80");
             String ZESA_PATH = properties.getProperty("ZESA_PATH", "/cgi-bin/webscr");
             String ZESA_ACTION = properties.getProperty("ZESA_ACTION", "http://" + ZESA_HOST + ":" + ZESA_PORT + ZESA_PATH);
 

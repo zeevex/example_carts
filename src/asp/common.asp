@@ -17,15 +17,15 @@ dim RANDOM_ORDER
 
 
 
-ZESA_HOST = "dev.zbox.zeevex.com"
+ZESA_HOST = "sandbox.zeevex.com"
 ZESA_PORT = 80
 ZESA_PATH = "/cgi-bin/webscr"
 ZESA_ACTION = "http://" & ZESA_HOST & ":" & ZESA_PORT & ZESA_PATH
 
 
 
-EXAMPLE_CUSTOMER_EMAIL = "customer@yoursite.com"
-EXAMPLE_HOST_URL = "http://localhost:8080/examplecart"
+EXAMPLE_CUSTOMER_EMAIL = "customer@yourwebsite.com"
+EXAMPLE_HOST_URL = "http://yourwebsite.com/examplecart"
 EXAMPLE_CANCEL_URL = EXAMPLE_HOST_URL & "/cart.asp"
 EXAMPLE_RECEIPT_URL = EXAMPLE_HOST_URL & "/receipt.asp"
 EXAMPLE_IPN_URL = EXAMPLE_HOST_URL &"/ipn.asp"
