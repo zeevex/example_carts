@@ -29,14 +29,14 @@ EXAMPLE_HOST_URL = "http://10.37.129.7:8080/examplecart"
 EXAMPLE_CANCEL_RETURN_URL = EXAMPLE_HOST_URL & "/default.asp"
 EXAMPLE_RETURN_URL = EXAMPLE_HOST_URL & "/return.asp"
 EXAMPLE_NOTIFY_URL = EXAMPLE_HOST_URL &"/ipn.asp"
-EXAMPLE_INVOICE_NUMBER = RandomNumber(1000,10000)
+EXAMPLE_INVOICE_NUMBER = RandomNumber(1001,10000)
 EXAMPLE_ITEM_NAME = "Ring of Power"
 EXAMPLE_ITEM_SKU  = RandomNumber(2000,3000)
 EXAMPLE_BUSINESS = "admin@zeevex.com"
-EXAMPLE_RANDOM_ORDER = RandomNumber(1, 1000)
+EXAMPLE_RANDOM_ORDER = RandomNumber(1, 10000)
 IPN_LOG="ipn.log"
 
-Function RandomNumber(intHighestNumber, intLowestNumber )
+Function RandomNumber(intLowestNumber, intHighestNumber)
 	Randomize
 	RandomNumber = Int(Rnd * intHighestNumber) + intLowestNumber
 End Function
