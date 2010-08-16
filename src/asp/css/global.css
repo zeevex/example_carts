@@ -1,0 +1,229 @@
+/****************************************************************************
+
+Authors: Stephen Saugestad & Ben Hulse
+
+*****************************************************************************/
+
+/* defaults ************************************************************/
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	background: #000 url(../images/bg.gif);
+	margin-top:30px;
+	padding-top: 30px;
+}
+
+
+body a:link, body a:visited, body a:active {
+	color:#FFF;
+	text-decoration: none;
+}
+body a:hover {
+	text-decoration: none;
+	color:#CCC;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#333;
+	margin:1em 0;
+}
+ul, li {
+	margin:5px;
+	padding:5px;
+	list-style:none;
+}
+/* hacks ***********************************************/
+
+
+
+.clearfix:after, .container:after {
+	content:"\0020";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+	overflow:hidden;
+}
+.clearfix, .container {
+	display:block;
+}
+.clear {
+	clear:both;
+}
+/* misc ********************************************/
+
+h1#logo, h1#logo a {
+	float: left;
+	margin:0;
+	padding:0;
+	display:block;
+	text-indent: -9999px;
+	background: url(../images/merchant_logo.gif) no-repeat left top;
+	width: 221px;
+	height: 40px;
+}
+label {
+	display:block;
+	font-size:1em;
+	font-weight:normal;
+	margin:0;
+	padding:0;
+}
+.column, div.span-1, div.span-2, div.span-3, div.span-4, div.span-5, div.span-6, div.span-7, div.span-8, div.span-9, div.span-10, div.span-11, div.span-12, div.span-13, div.span-14, div.span-15, div.span-16, div.span-17, div.span-18, div.span-19, div.span-20, div.span-21, div.span-22, div.span-23, div.span-24 {
+	float:left;
+	margin-right:10px;
+}
+.last, div.last {
+	margin-right:0;
+}
+.span-1 {
+	width:30px;
+}
+.span-2 {
+	width:70px;
+}
+.span-3 {
+	width:110px;
+}
+.span-4 {
+	width:150px;
+}
+.span-5 {
+	width:190px;
+}
+.span-6 {
+	width:230px;
+}
+.span-7 {
+	width:270px;
+}
+.span-8 {
+	width:310px;
+}
+div.forminput input {
+	background-color:#999;
+	color:#FFF;
+	border:1px solid #666;
+	height:20px;
+	width:100%;
+	margin:0.5em 0;
+	font-family:inherit;
+	font-size:100%;
+	font-style:inherit;
+	font-weight:bold;
+}
+#cluster_form .forminput input {
+	font-size:1.3em;
+	height:1.5em;
+	width:inherit;
+}
+div.submit input {
+	/* background:url("/images/button-arrow-right.gif") no-repeat scroll 85% 50% #5A6D84; */
+border:1px solid #FFFFFF;
+	background-color:#333;
+	color:#FFFFFF;
+	font-size:1.1em;
+	margin-right:0.5em;
+	padding:0.4em 1.75em 0.4em 0.75em;
+}
+.log_row {
+	display: table-row;
+	background-color:#CCC;
+	height:20px;
+}
+.log_message {
+	display: block;
+	padding:5px;
+	overflow:auto;
+	width:550px;
+}
+.log_type {
+	font-weight: bold;
+	display: table-cell;
+	padding:5px;
+	width:100px;
+}
+/* main divs *****************************************/
+
+#wrap {
+	width:700px;
+	margin:0 auto;
+	padding:0;
+}
+#content {
+	width:698px;
+}
+#contentBlank {
+	width:598px;
+	background-color:#fff;
+	clear:left;
+	padding:50px;
+}
+#contentHome {
+	width:666px;
+	background-color:#fff;
+	clear:left;
+	padding:16px;
+}
+#contentFrame {
+	width:700px;
+	background-color:#666;
+	clear:left;
+	padding:16px;
+	padding-bottom: 50px;
+}
+
+
+
+/* sub nav *****************************************/
+
+#subNav, #subNavWide {
+	height:30px;
+	width:420px;
+	font-size:1px;
+	float:left;
+	clear:left;
+	
+}
+#subNavWide {
+	width:698px;
+}
+#subNav li a, #subNavWide li a {
+
+	text-decoration: none;
+	display:block;
+	height: 10px;
+	color:#CCC;
+	font-weight:bold;
+	
+}
+#subNav li, #subNavWide li {
+	display:inline;
+	float:left;
+	height: 10px;
+	margin: 10px 0px 0px 0px;
+	
+} 
+
+
+
+/* navigation **************************************/
+
+#nav {
+	width: 380px;
+	float: right;
+	height: 40px;
+	padding:0;
+	margin-right: -11px;
+}
+#nav li {
+	display: inline;
+	float:left;
+	color:#CCC;
+	padding:5px;
+}

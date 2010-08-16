@@ -4,20 +4,20 @@ dim ZESA_PORT
 dim ZESA_PATH
 dim ZESA_ACTION
 dim EXAMPLE_HOST_URL
-dim EXAMPLE_CANCEL_URL
-dim EXAMPLE_RECEIPT_URL
-dim EXAMPLE_IPN_URL
+dim EXAMPLE_CANCEL_RETURN_URL
+dim EXAMPLE_RETURN_URL
+dim EXAMPLE_NOTIFY_URL
 dim EXAMPLE_INVOICE_NUMBER
 dim EXAMPLE_ITEM_NAME
 dim EXAMPLE_ITEM_SKU
 dim EXAMPLE_BUSINESS
 dim EXAMPLE_CUSTOMER_EMAIL
 dim IPN_LOG
-dim RANDOM_ORDER
+dim EXAMPLE_RANDOM_ORDER
 
 
 
-ZESA_HOST = "sandbox.zeevex.com"
+ZESA_HOST = "staging.zbox.zeevex.com"
 ZESA_PORT = 80
 ZESA_PATH = "/cgi-bin/webscr"
 ZESA_ACTION = "http://" & ZESA_HOST & ":" & ZESA_PORT & ZESA_PATH
@@ -25,15 +25,15 @@ ZESA_ACTION = "http://" & ZESA_HOST & ":" & ZESA_PORT & ZESA_PATH
 
 
 EXAMPLE_CUSTOMER_EMAIL = "customer@yourwebsite.com"
-EXAMPLE_HOST_URL = "http://yourwebsite.com/examplecart"
-EXAMPLE_CANCEL_URL = EXAMPLE_HOST_URL & "/cart.asp"
-EXAMPLE_RECEIPT_URL = EXAMPLE_HOST_URL & "/receipt.asp"
-EXAMPLE_IPN_URL = EXAMPLE_HOST_URL &"/ipn.asp"
+EXAMPLE_HOST_URL = "http://10.37.129.7:8080/examplecart"
+EXAMPLE_CANCEL_RETURN_URL = EXAMPLE_HOST_URL & "/default.asp"
+EXAMPLE_RETURN_URL = EXAMPLE_HOST_URL & "/return.asp"
+EXAMPLE_NOTIFY_URL = EXAMPLE_HOST_URL &"/ipn.asp"
 EXAMPLE_INVOICE_NUMBER = RandomNumber(1000,10000)
 EXAMPLE_ITEM_NAME = "Ring of Power"
 EXAMPLE_ITEM_SKU  = RandomNumber(2000,3000)
 EXAMPLE_BUSINESS = "admin@zeevex.com"
-RANDOM_ORDER = RandomNumber(1, 1000)
+EXAMPLE_RANDOM_ORDER = RandomNumber(1, 1000)
 IPN_LOG="ipn.log"
 
 Function RandomNumber(intHighestNumber, intLowestNumber )
@@ -54,7 +54,9 @@ Function Log_Message(kind,message)
         set file = fso.CreateTextFile(filePath)   
      end if
 	 
-	 file.WriteLine("<table width=100% border=1><tr><td valign='top' width=100>" & kind & "</td><td>" & message & "</td></tr></table>")
+	 file.WriteLine("<div class='log_row'><div class='log_type'>" & kind & "</div><div class='log_message'>" & message & "</div></div>")
+       
+	' file.WriteLine("<table width=100% border=1><tr><td valign='top' width=100>" & kind & "</td><td>" & message & "</td></tr></table>")
 
      file.Close()
 	 

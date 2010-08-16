@@ -5,7 +5,7 @@
 <!--#include file="common.asp"-->
 <html>
     <head>
-        <title> ZEEVEX: Test Cart</title>
+        <title>ZEEVEX: Test 2 Cart</title>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <style type="text/css" media=screen>
