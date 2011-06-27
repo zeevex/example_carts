@@ -41,7 +41,7 @@ log_request("DEBUG", "Beging request with random order #$RANDOM_ORDER");
                             </div>
                             <div class="forminput span-4">
                                 <label for="currency_code">currency_code</label>
-                                <input type="text" name="currency_code" value="GBP" readonly />
+                                <input type="text" name="currency_code" value="GBP" />
                             </div>
                             <div class="forminput span-4">
                                 <label for="payment_action">payment_action</label>
