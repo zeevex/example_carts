@@ -23,7 +23,7 @@ $EXAMPLE_ITEM_SKU  = rand(2000,3000);
 
 
 $EXAMPLE_BUSINESS = "admin@zeevex.com";
-$EXAMPLE_BRAND_ID = "anonymous_brand";
+$EXAMPLE_BRAND = "anonymous_brand";
 
 $IPN_LOG="ipn.log";
 $RANDOM_ORDER = rand(1, 1000);

@@ -27,8 +27,7 @@ log_request("DEBUG", "Beging request with random order #$RANDOM_ORDER");
                 <div id="contentHome">
                     <p>&nbsp;</p>
                     <form action="<?php echo $ZESA_ACTION ?>" >
-                        <input type="hidden" name="brand" value="no_brand"/>
-
+                        
                         <fieldset >
                             <legend>Read-Only</legend>
                             <div class="clear forminput span-4">
@@ -62,6 +61,10 @@ log_request("DEBUG", "Beging request with random order #$RANDOM_ORDER");
                             <div class="forminput span-4 last">
                                 <label for="invoice">invoice</label>
                                 <input type="text" name="invoice" value="<?php echo time() ?>" />
+                            </div>
+                             <div class="forminput span-4 last">
+                                <label for="brand">brand</label>
+                                <input type="text" name="brand" value="<?php echo $EXAMPLE_BRAND  ?>" />
                             </div>
                             <div class="clear forminput span-4 ">
                                 <label for="item_name">item_name</label>
