@@ -58,7 +58,7 @@ log_request("DEBUG", "Beging request with random order #$RANDOM_ORDER");
                                 <label for="amount">amount</label>
                                 <input type="text" name="amount" value="17.76" />
                             </div>
-                            <div class="forminput span-4 last">
+                            <div class="forminput span-4 ">
                                 <label for="invoice">invoice</label>
                                 <input type="text" name="invoice" value="<?php echo time() ?>" />
                             </div>
