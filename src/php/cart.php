@@ -47,8 +47,9 @@ log_request("DEBUG", "Beging request with random order #$RANDOM_ORDER");
                     <legend>Read-Only</legend>
                     <label for="rm">rm</label><input type="text" name="rm" value="0" readonly />
                     <label for="cmd">cmd</label><input type="text" name="cmd" value="_xclick" readonly/><br/>
-                    <label for="currency_code">currency_code</label><input type="text" name="currency_code" value="USD" readonly />
+                    <label for="currency_code">currency_code</label><input type="text" name="currency_code" value="GBP" readonly />
                     <label for="payment_action">payment_action</label><input type="text" name="payment_action" value="sale" readonly />
+
                 </fieldset>  </div>
             <div  class="border" >
                 <fieldset >
@@ -76,6 +77,8 @@ log_request("DEBUG", "Beging request with random order #$RANDOM_ORDER");
             <fieldset >
                 <legend>API Info</legend>
                 <label for="business">business</label> <input type="text" name="business" value="<?php echo $EXAMPLE_BUSINESS ?>" /> <br/>
+
+                <label for="brand_id">brand_id</label> <input type="text" name="brand_id" value="<?php echo $EXAMPLE_BRAND_ID ?>" /> <br/>
 
                 <label for="amount">amount</label> <input type="text" name="amount" value="17.76" /> <br/>
 
