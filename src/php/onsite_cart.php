@@ -166,6 +166,7 @@ $EXAMPLE_RETURN_URL= "$EXAMPLE_HOST_URL/onsite_cart_return.php";
                     <input id="currency_code" name="currency_code" type="hidden" value="ZXT" />
                     <input id="rm" name="rm" type="hidden" value="0" />
                     <input id="iframe" name="iframe" type="hidden" value="1" />
+                    <input id="brand" name="brand" type="hidden" value="<?php echo $EXAMPLE_BRAND ?>" />
                     <input id="business" name="business" type="hidden" value="<?php echo $EXAMPLE_BUSINESS ?>" />
                     <input id="invoice" name="invoice" type="hidden" value="<?php echo $EXAMPLE_INVOICE_NUMBER ?>" />
                     <input id="item_name" name="item_name" type="hidden" value="<?php echo $EXAMPLE_ITEM_NAME ?>" />

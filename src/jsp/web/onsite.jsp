@@ -162,6 +162,7 @@ h1 {
         <input id="currency_code" name="currency_code" type="hidden" value="ZXT" />
         <input id="rm" name="rm" type="hidden" value="0" />
         <input id="iframe" name="iframe" type="hidden" value="1" />
+        <input id="brand" name="brand" type="hidden" value="<%= EXAMPLE_BRAND %>" />
         <input id="business" name="business" type="hidden" value="<%= EXAMPLE_BUSINESS %>" />
         <input id="invoice" name="invoice" type="hidden" value="<%=  RANDOM_ORDER %>" />
         <input id="item_name" name="item_name" type="hidden" value="Zeevex Token" />

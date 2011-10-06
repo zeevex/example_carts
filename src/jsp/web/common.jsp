@@ -21,6 +21,8 @@
             String EXAMPLE_ITEM_SKU = properties.getProperty("EXAMPLE_ITEM_SKU", "" + (2000 + new Random().nextInt(1000))); //rand(2000,3000) ) ;
 
             String EXAMPLE_BUSINESS = properties.getProperty("EXAMPLE_BUSINESS", "admin@zeevex.com");
+            String EXAMPLE_BRAND = properties.getProperty("EXAMPLE_BRAND", "anonymous_brand");
+            
             String IPN_LOG = properties.getProperty("IPN_LOG", "ipn.log");
             String RANDOM_ORDER = properties.getProperty("RANDOM_ORDER", "" + (new Random().nextInt(1000)));
 %>
