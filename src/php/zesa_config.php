@@ -6,11 +6,10 @@
  */
 require('common.php');
 
-
 $ZESA_HOST="game-wallet.dev";
 $ZESA_PORT=80;
 $ZESA_PATH="/cgi-bin/webscr";
-$ZESA_ACTION = "http://$ZESA_HOST:$ZESA_PORT$ZESA_PATH";
+$ZESA_ACTION = $ZESA_PORT == 80 ? "http://$ZESA_HOST$ZESA_PATH" : "https://$ZESA_HOST$ZESA_PATH";
 
 $EXAMPLE_HOST_URL = "http://phpcart.zeevex.com"; // change this to match your server
 $EXAMPLE_CANCEL_RETURN_URL = "$EXAMPLE_HOST_URL/target_cancel.php";

@@ -166,7 +166,7 @@ Target.globals.mediapath = 'assets/Img3-secure.targetimg3.com/wcsstore/TargetSAS
           <div id="chekoutLogoWrapper"> <a href="http://www.target.com/" title="Home Page"> <span class="screen-reader-only">
           <estore:message key="HOME_LINK"></estore:message>
           </span> </a> </div>
-          <div id="return-link-container"> <a title="Add to Cart Page" href="https://www-secure.target.com/ExitCheckoutCmd?langId=-1&amp;storeId=10151&amp;orderId=320343943&amp;catalogId=10051&amp;redirectUrl=https%3a%2f%2fwww-secure.target.com%2fOrderItemDisplay%3flangId%3d-1%26storeId%3d10151%26catalogId%3d10051%26updatePrices%3d1%26calculationUsageId%3d-1&amp;lnk=nav_checkout_cart">return to cart and continue shopping</a> </div>
+          <div id="return-link-container"> <a title="Add to Cart Page" href="#">return to cart and continue shopping</a> </div>
         </div>
     <div id="Content">
           <input type="hidden" id="oldPromoCode" value="">
@@ -178,7 +178,7 @@ Target.globals.mediapath = 'assets/Img3-secure.targetimg3.com/wcsstore/TargetSAS
         <div id="categoryHeader"> <span class="search-big-text">checkout</span> </div>
       </div>
           <div id="checkout-progress">
-        <div id="breadcrumb" role="navigation"> <span class="screen-reader-only">You are here:</span> <span class="first"><a href="https://www-secure.target.com/CheckoutOrderShippingView?langId=-1&amp;storeId=10151&amp;catalogId=10051" title="shipping page">shipping</a></span> <span class="separator previous">&gt;</span> <span class="current">payment</span> <span class="separator current">&gt;</span> <span class="last-child">review &amp; place order</span> </div>
+        <div id="breadcrumb" role="navigation"> <span class="screen-reader-only">You are here:</span> <span class="first"><a href="#" title="shipping page">shipping</a></span> <span class="separator previous">&gt;</span> <span class="current">payment</span> <span class="separator current">&gt;</span> <span class="last-child">review &amp; place order</span> </div>
       </div>
           <div id="Main"><a name="mainBody"></a>
         <div id="primary">
@@ -3165,7 +3165,7 @@ $(document).ready(function(){
 }); 
 </script>
               <div id="button-row">
-            <button class="button" id="payment-submit" value="1" name="payment-submit" type="submit" title="continue checkout"><span class="buttonText">continue checkout</span></button>
+            <button class="button" id="payment-submit" value="1" name="payment-submit" type="submit" title="continue checkout"  onclick="javascript:paypal()"><span class="buttonText">continue checkout</span></button>
             <p class="instructions">Click continue checkout to review the order. Payment will not be applied yet</p>
           </div>
               <script type="text/javascript">
