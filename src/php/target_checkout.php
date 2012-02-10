@@ -221,7 +221,7 @@ Target.globals.mediapath = 'assets/Img3-secure.targetimg3.com/wcsstore/TargetSAS
                 <h3 class="screen-reader-only">checkout with PayPal.</h3>
                 <input name="payapal1" type="checkbox" id="checkOutWithPaypal" onclick="javascript:paypal()" value="paypal" >
                 <label for="checkOutWithPaypal" class="check-headeh3">checkout with GAME-Wallet.</label>
-                <p class="subhead"><a title="PayPal Payment Page" id="paypal-link" href="javascript:paypal()"></a> &nbsp; <a href="https://www.paypal.com/cgi-bin/webscr?cmd=xpt/Marketing/popup/OLCWhatIsPayPal-outside " target="_blank"> what is GAM-EWallet?</a> </p>
+                <p class="subhead"><a title="PayPal Payment Page" id="paypal-link" href="javascript:paypal()"></a> &nbsp; <a href="https://www.paypal.com/cgi-bin/webscr?cmd=xpt/Marketing/popup/OLCWhatIsPayPal-outside " target="_blank"> what is GAME-Wallet?</a> </p>
               </div>
                 </div>
           </form>
