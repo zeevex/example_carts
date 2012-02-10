@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head><title></title></head><body style="background-color: transparent"><div id="dtmdiv" style="display: none; "></div><script type="text/javascript" src="https://a248.e.akamai.net/7/248/14564/20080403/dotomi.download.akamai.com/14564/rules/2161/rules.js"></script><script language="JavaScript">
+
+var protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+var top_cat = "checkout:%20payments:%20anonymous%20user";
+var top_cat = top_cat.replace(/%20/g, '').replace(/&/g, '-');
+
+var spotpix = new Image();
+spotpix.src = protocol + "segment-pixel.invitemedia.com/pixel?code=" + top_cat + "&partnerID=237&key=segment";
+
+</script><script type="text/javascript">
+	var dtmtag = window.location.protocol + "//a248." + (window.location.protocol == "http:" ? "g" : "e") + ".akamai.net/7/248/14564/20080403/dotomi.download.akamai.com/14564/rules/2161/dtmtag.js";
+	document.write('<scr'+'ipt type="text/javascript" src="' + dtmtag + '"></scr'+'ipt>');
+</script><script type="text/javascript" src="https://a248.e.akamai.net/7/248/14564/20080403/dotomi.download.akamai.com/14564/rules/2161/dtmtag.js"></script>
+
+</body></html>
